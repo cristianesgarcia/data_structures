@@ -1,4 +1,4 @@
-from fibonacci.fibonacci import Fibonacci
+from fibonacci import Fibonacci
 import pytest
 
 class TestFibonacci:
