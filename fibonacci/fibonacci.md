@@ -43,7 +43,6 @@ Those methods were implemented in Python in the file named fibonacci.py.
 
 Each method has a test implemented in the file named fibonacci_test.py.
 
-
 ## Other algorithms/methods
 
 ### Power of the matrix
