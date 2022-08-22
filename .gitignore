@@ -1,3 +1,6 @@
 fibonacci/__pycache__/*
 __pycache__/test_fibonacci.cpython-38-pytest-7.1.2.pyc
 introduction/fibonacci/__pycache__/*
+introduction/drawing_application/*
+introduction/testing.py
+*.pyc
