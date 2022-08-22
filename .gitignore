@@ -4,3 +4,5 @@ introduction/fibonacci/__pycache__/*
 introduction/drawing_application/*
 introduction/testing.py
 *.pyc
+*.drawio
+*.pdf
