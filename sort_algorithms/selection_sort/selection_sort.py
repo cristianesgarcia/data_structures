@@ -11,12 +11,12 @@ class SelectionSort:
         swap = Swap()
         
         for i in range(len(data)):
-            atual = i
+            current = i
             for j in range(i+1, len(data)):
-                if data[atual] > data[j]:
-                    atual = j
-            if i != atual:
-                swap.swap(data, i, atual)
+                if data[current] > data[j]:
+                    current = j
+            if i != current:
+                swap.swap(data, i, current)
         return data
 
 if __name__ == '__main__':
