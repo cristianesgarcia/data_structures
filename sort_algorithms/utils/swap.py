@@ -1,4 +1,6 @@
-def swap(data, i, j):
-    aux = data[i]
-    data[i] = data[j]
-    data[j] = aux
+class Swap:
+
+    def swap(self, data, i, j):
+        aux = data[i]
+        data[i] = data[j]
+        data[j] = aux
