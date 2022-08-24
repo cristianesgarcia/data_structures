@@ -1,5 +1,6 @@
 import sys
 
+# add the namespace
 sys.path += ['sort_algorithms/utils']
 
 from swap import Swap
