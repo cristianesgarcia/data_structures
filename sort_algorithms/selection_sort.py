@@ -1,7 +1,4 @@
-import sys
-sys.path.insert(0, '..')
-
-from swap import swap
+from utils.swap import swap
 
 class SelectionSort:
 

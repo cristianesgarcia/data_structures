@@ -1,4 +1,6 @@
-# Selection sort
+# Sort algorithms
+
+## Selection sort
 
 The selection sort algorithm is a simple sorting algorithm.
 
@@ -10,6 +12,6 @@ Example of the selection sort algorithm:
 
 ![Class diagram](images/selection_sort.svg)
 
-## Complexity:
+### Complexity:
 
 This algorithm has complexity *O(n^2)*.
