@@ -1,5 +1,6 @@
 from sort_algorithms import SortAlgorithms
 import pytest
+import copy
 
 class TestSortAlgorithms:
 
@@ -11,13 +12,13 @@ class TestSortAlgorithms:
     ####################################################################
     def test_selection_sort_unsorted(self):
         data = [3,5,0,1,2,-3,-7]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.selection_sort(data) == result
 
     def test_selection_sort_sorted(self):
         data = list(range(11))
-        result = data.copy()
+        result = copy.deepcopy(data)
         assert self.algorithms.selection_sort(data) == result
 
     def test_selection_sort_empty(self):
@@ -35,13 +36,13 @@ class TestSortAlgorithms:
     ####################################################################
     def test_bubble_sort_unsorted(self):
         data = [123,87,-12,-9,4,23,56,15]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.bubble_sort(data) == result
     
     def test_bubble_sort_sorted(self):
         data = list(range(101))
-        result = data.copy()
+        result = copy.deepcopy(data)
         assert self.algorithms.bubble_sort(data) == result
     
     def test_bubble_sort_empty_list(self):
@@ -59,13 +60,13 @@ class TestSortAlgorithms:
     ####################################################################
     def test_bubble_sort_optimized_unsorted(self):
         data = [123,87,-12,-9,4,23,56,15]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.bubble_sort_optimized(data) == result
     
     def test_bubble_sort_optimized_sorted(self):
         data = list(range(101))
-        result = data.copy()
+        result = copy.deepcopy(data)
         assert self.algorithms.bubble_sort_optimized(data) == result
     
     def test_bubble_sort_optimized_empty_list(self):
@@ -84,13 +85,13 @@ class TestSortAlgorithms:
     ####################################################################
     def test_insertion_sort_unsorted(self):
         data = [5,20,4,3,18]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.insertion_sort(data) == result
     
     def test_insertion_sort_sorted(self):
         data = list(range(21))
-        result = data.copy()
+        result = copy.deepcopy(data)
         assert self.algorithms.insertion_sort(data) == result
     
     def test_insertion_sort_empty(self):
@@ -105,7 +106,7 @@ class TestSortAlgorithms:
     
     def test_insertion_sort_repeated_elements(self):
         data = [5,20,4,4,0,3,18,18]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.insertion_sort(data) == result
 
@@ -114,7 +115,7 @@ class TestSortAlgorithms:
     ####################################################################    
     def test_quick_sort_unsorted(self):
         data = [12,19,17,18,0,-12,13,16]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         start = 0
         end = len(data) - 1
@@ -122,7 +123,7 @@ class TestSortAlgorithms:
     
     def test_quick_sort_sorted(self):
         data = list(range(20))
-        result = data.copy()
+        result = copy.deepcopy(data)
         start = 0
         end = len(data) - 1
         assert self.algorithms.quick_sort(data, start, end) == result
@@ -143,7 +144,7 @@ class TestSortAlgorithms:
 
     def test_quick_sort_repeated_elements(self):
         data = [5,20,4,4,0,3,18,18,0,-12,-20,-12]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         start = 0
         end = len(data) - 1
@@ -155,13 +156,13 @@ class TestSortAlgorithms:
 
     def test_merge_sort_unsorted(self):
         data = [12,19,17,18,0,-12,13,16]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.merge_sort(data) == result
     
     def test_merge_sort_sorted(self):
         data = list(range(101))
-        result = data.copy()
+        result = copy.deepcopy(data)
         assert self.algorithms.merge_sort(data) == result
 
     def test_merge_sort_empty_list(self):
@@ -176,19 +177,19 @@ class TestSortAlgorithms:
     
     def test_merge_sort_repeated_elements(self):
         data = [12,19,17,18,0,-12,13,16,-12,0,0,17]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.merge_sort(data) == result
 
     def test_merge_sort_index_unsorted(self):
         data = [12,19,17,18,0,-12,13,16]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.merge_sort_index(data) == result
     
     def test_merge_sort_index_sorted(self):
         data = list(range(101))
-        result = data.copy()
+        result = copy.deepcopy(data)
         assert self.algorithms.merge_sort_index(data) == result
 
     def test_merge_sort_index_empty_list(self):
@@ -203,7 +204,7 @@ class TestSortAlgorithms:
     
     def test_merge_sort_index_repeated_elements(self):
         data = [12,19,17,18,0,-12,13,16,-12,0,0,17]
-        result = data.copy()
+        result = copy.deepcopy(data)
         result.sort()
         assert self.algorithms.merge_sort_index(data) == result
 
