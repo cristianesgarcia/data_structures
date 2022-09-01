@@ -92,6 +92,27 @@ Example of the quicksort algorithm:
 This algorithm has complexity *O(n log n)* in the best and average case scenarios.
 In te worst case, it runs in *O(n^2)* times.
 
+## Merge sort
+
+Merge sort is another divide-and-conquer algorithm.
+The divide-and-conquer pattern consists of the following steps:
+
+1. **Divide:** If the list size is smaller than a threshold (for example, 2) solve the problem directly using a straightforward method and return the solution obtained in this iteration. Otherwise, divide the input list in two sublists.
+2. **Conquer:** For each sublist, solve the subproblems recursively.
+3. **Combine:** Take the solutions of each subproblem and merge them into a solution to the original problem.
+
+The merge sort algorithm can be summarized as follows, to sort a sequence *S* with *n* elements using the divide-and-conquer steps:
+
+1. **Divide:** Return *S* if it has zero or one element. If *S* has two or more elements, divide it into two sequences, *S_1* and *S_2*, each sequence having about half of the elements of *S*.
+2. **Conquer:** Sort *S_1* and *S_2* recursively.
+3. **Combine:** Put back the elements into *S* merging the sorted sequences *S_1* and *S_2* into a sorted sequence.
+
+The figure below illustrates the operation of the merge sort algorithm.
+![Class diagram](images/merge_sort.svg)
+
+### Complexity
+
+This algorithm has complexity *O(n log n)*.
 
 
 

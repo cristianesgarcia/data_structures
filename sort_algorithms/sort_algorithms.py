@@ -1,3 +1,5 @@
+import array
+
 class SortAlgorithms:
 
     def selection_sort(self, data):
@@ -63,7 +65,7 @@ class SortAlgorithms:
         self.quick_sort(data, pos_pivot+1, end)
 
         return data
-
+    
     def _partition(self, data, start, end):
         position_pivot = (start+end)//2
         pivot = data[position_pivot]
@@ -78,7 +80,67 @@ class SortAlgorithms:
         
         self._swap(data, end, boundary)
         return boundary
+
+    def merge_sort(self, data):
+        data_size = len(data)
+
+        if data_size < 2:
+            return data
+        
+        middle = data_size // 2
+        list1 = data[0:middle]
+        list2 = data[middle:data_size]
+        self.merge_sort(list1)
+        self.merge_sort(list2)
+        self._merge(data, list1, list2)
+        
+        return data
+
+    def _merge(self, data, list1, list2):
+        i = 0
+        j = 0
+        while (i+j) < len(data):
+            if (j == len(list2)) or (i < len(list1) and list1[i]<list2[j]):
+                data[i+j] = list1[i]
+                i += 1
+            else:
+                data[i+j] = list2[j]
+                j += 1
+
+    def merge_sort_index(self, data):
+        # Uses a buffer to sort the elements during merge
+        buffer = array.array('i', data)
+        self._merge_sort_index_helper(data, buffer, 0, len(data)-1)
+        return data
+        
+    def _merge_sort_index_helper(self, data, buffer, low, high):
+        if low < high:
+            middle = (low+high)//2
+            self._merge_sort_index_helper(data, buffer, low, middle)
+            self._merge_sort_index_helper(data, buffer, middle+1, high)
+            self._merge_sort_index_merge(data, buffer, low, middle, high)
     
+    def _merge_sort_index_merge(self, data, buffer, low, middle, high):
+        index_1 = low
+        index_2 = middle + 1
+
+        for i in range(low, high+1):
+            if index_1 > middle:
+                buffer[i] = data[index_2]
+                index_2 += 1
+            elif index_2 > high:
+                buffer[i] = data[index_1]
+                index_1 += 1
+            elif data[index_1] < data[index_2]:
+                buffer[i] = data[index_1]
+                index_1 += 1
+            else:
+                buffer[i] = data[index_2]
+                index_2 += 1
+        # Copy to the list the sorted elements
+        for i in range(low, high+1):
+            data[i] = buffer[i]
+
     def _swap(self, data, i, j):
         aux = data[i]
         data[i] = data[j]

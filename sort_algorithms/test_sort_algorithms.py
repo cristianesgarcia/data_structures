@@ -148,3 +148,65 @@ class TestSortAlgorithms:
         start = 0
         end = len(data) - 1
         assert self.algorithms.quick_sort(data, start, end) == result
+
+    ####################################################################
+    #### Tests for merge sort
+    ####################################################################
+
+    def test_merge_sort_unsorted(self):
+        data = [12,19,17,18,0,-12,13,16]
+        result = data.copy()
+        result.sort()
+        assert self.algorithms.merge_sort(data) == result
+    
+    def test_merge_sort_sorted(self):
+        data = list(range(101))
+        result = data.copy()
+        assert self.algorithms.merge_sort(data) == result
+
+    def test_merge_sort_empty_list(self):
+        data = []
+        result = []
+        assert self.algorithms.merge_sort(data) == result
+
+    def test_merge_sort_single_element(self):
+        data = [12]
+        result = [12]
+        assert self.algorithms.merge_sort(data) == result
+    
+    def test_merge_sort_repeated_elements(self):
+        data = [12,19,17,18,0,-12,13,16,-12,0,0,17]
+        result = data.copy()
+        result.sort()
+        assert self.algorithms.merge_sort(data) == result
+
+    def test_merge_sort_index_unsorted(self):
+        data = [12,19,17,18,0,-12,13,16]
+        result = data.copy()
+        result.sort()
+        assert self.algorithms.merge_sort_index(data) == result
+    
+    def test_merge_sort_index_sorted(self):
+        data = list(range(101))
+        result = data.copy()
+        assert self.algorithms.merge_sort_index(data) == result
+
+    def test_merge_sort_index_empty_list(self):
+        data = []
+        result = []
+        assert self.algorithms.merge_sort_index(data) == result
+
+    def test_merge_sort_index_single_element(self):
+        data = [12]
+        result = [12]
+        assert self.algorithms.merge_sort_index(data) == result
+    
+    def test_merge_sort_index_repeated_elements(self):
+        data = [12,19,17,18,0,-12,13,16,-12,0,0,17]
+        result = data.copy()
+        result.sort()
+        assert self.algorithms.merge_sort_index(data) == result
+
+
+
+
